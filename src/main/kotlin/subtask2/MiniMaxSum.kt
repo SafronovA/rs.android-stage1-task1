@@ -1,9 +1,16 @@
-package subtask2
+package rsTask.subtask2
 
 class MiniMaxSum {
 
-    // TODO: Complete the following function
     fun getResult(input: IntArray): IntArray {
-        throw NotImplementedError("Not implemented")
+        var resultsList = mutableListOf<Int>()
+
+        for (i in input.indices){
+            resultsList.add(getSumExсept(input, i))
+        }
+        return intArrayOf(resultsList.min()!!, resultsList.max()!!)
     }
+
+    private fun getSumExсept(input: IntArray, position: Int) = input.sum() - input[position]
+
 }
