@@ -3,14 +3,9 @@ package rsTask.subtask2
 class MiniMaxSum {
 
     fun getResult(input: IntArray): IntArray {
-        var resultsList = mutableListOf<Int>()
-
-        for (i in input.indices){
-            resultsList.add(getSumExсept(input, i))
-        }
-        return intArrayOf(resultsList.min()!!, resultsList.max()!!)
+        var sum = input.sum()
+        var minInt = input.min()
+        var maxInt = input.max()
+        return intArrayOf(sum - maxInt!!, sum - minInt!!)
     }
-
-    private fun getSumExсept(input: IntArray, position: Int) = input.sum() - input[position]
-
 }
